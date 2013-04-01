@@ -2,8 +2,9 @@ Similar
 =======
 
 Canonicalizer to disambiguate and recognize known names from a poor quality data entry list.
+It was tested to achieve a match at much greater than 80% for low quality intentional input.
 
-I will reconstruct my canonicalizer on demand.
+I will reconstruct this canonicalizer on demand.
 
 It uses the following algorithms:
 
