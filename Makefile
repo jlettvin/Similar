@@ -15,6 +15,7 @@ all:
 	@echo "under 20 percent to over 70 percent"
 	@echo ""
 	@echo "It is not demonstrated here."
+	@echo "TODO: make lint and fix warnings."
 	./Similar.py
 
 .PHONY: clean
