@@ -707,8 +707,9 @@ if __name__ == "__main__":
             self.home = os.environ['HOME']
             self.directory = './'
             if self.boards:
-                self.directory = os.path.join(
-                        self.home, 'src', 'jlettvin', 'data', 'mappings')
+                self.directory = os.path.abspath(os.path.dirname(__file__))
+                #self.directory = os.path.join(
+                        #self.home, 'src', 'jlettvin', 'data', 'mappings')
             self.boardfile = os.path.join(self.directory, self.boardname)
 
             if not self.output:
