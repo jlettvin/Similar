@@ -20,7 +20,7 @@ metaphone:   unimplemented.
 NYSSIS:      unimplemented.
 
 WARNING! This code makes log and csv files in it's local directory
-when run from the command-line.
+when run as a CLI from the command-line.
 
 The origins of the fat finger approach is in TECO where key statistics were
 measured and typed text corrected based on a guess about hand displacement.
@@ -38,11 +38,20 @@ by this algorithm, and there are numerous examples of misspellings that are
 missed as long as first and last letters match.
 http://www.mrc-cbu.cam.ac.uk/people/matt.davis/cmabridge/
 Also, this class handles acronyms.
+
+The file "boards.csv" contains a one-per-line list of known variants.
+All entries on a line are delimited by double-quote characters.
+The first entry on the line is always the "canonical" name.
+Other entries can be alternate known names, acronyms, truncations, etc...
+
+Here is a representative line from boards.csv:
+"Massachusetts Institute of Technology" "MIT" "M.I.T." "The tute"
 """
 
 
 import string
 import fuzzy
+
 
 class Similar(dict):
 
@@ -650,6 +659,7 @@ class Similar(dict):
         # If it is True, canonical will have the matching canonical form.
         return matchBool, canonical, used
 
+
 if __name__ == "__main__":
 
     import re     # Used during input of CSV files.
@@ -679,6 +689,7 @@ if __name__ == "__main__":
 
         def PASS(self):
             return self.choose['PASS']
+
 
     class test_Similar(unittest.TestCase):
 
@@ -1147,5 +1158,6 @@ if __name__ == "__main__":
                 print>>self.log, result
             else:
                 print result
+
 
     unittest.main()
