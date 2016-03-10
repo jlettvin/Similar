@@ -1,10 +1,32 @@
 Similar
 =======
 
-Canonicalizer to disambiguate and recognize known names from a poor quality data entry list.
-It was tested to achieve a match at much greater than 80% for low quality intentional input.
+A canonicalizer attempts to convert
+low quality database entries with
+known canonical target names
+into those target names.
 
-I will reconstruct this canonicalizer on demand.
+When data entry personnel enter data
+they will contract, abbreviate, acronym,
+misspell, and make mistakes such as
+transposing, skipping, or adding letters,
+or having their fingers over the wrong keys.
+
+A canonicalizer works with a limited set of target names
+and computes the least statistical distance between
+the entered data and a specific canonical target name.
+
+This canonicalizer uses multiple algorithms
+to compute multiple statistical distances
+and uses a least product of these distances
+to choose a best fit to a target name.
+
+Before this code was deployed
+the conversion rate for target names was about 17%.
+After this code was deployed
+the conversion rate rose to above 80%.
+The remainder of the failures was submitted
+for hand-canonicalization off-shore.
 
 It uses (or has hooks for) the following algorithms:
 
